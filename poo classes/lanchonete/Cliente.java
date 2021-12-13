@@ -3,6 +3,7 @@ package lanchonete;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 public class Cliente extends Funcionario {
 
@@ -61,7 +62,7 @@ public class Cliente extends Funcionario {
         System.out.println("=> CONCLUIR PEDIDOS <=");
         System.out.println("Pedidos:");
         //############## ERRO  ERRO   ERRO  ERRO ################################
-        System.out.println(novo.toString());
+        System.out.println(novo.impressao());
         System.out.println("\n\n>>>>> Total a pagar: R$ " + novo.getValorTotal() + " <<<<<\n");
         System.out.println(">>>>> Deseja Confirmar a Compra (S/N)? <<<<<<");
         System.out.print("=> ");
@@ -74,7 +75,7 @@ public class Cliente extends Funcionario {
         }
         switch (resposta.toUpperCase()) {
             case "S": {
-                MensagensPadrao.notice("Pedido Executado com sucesso! Porfavor Aguarde.\nLogo ele estará pronto! Volte Sempre!");
+                MensagensPadrao.notice("Pedido feito com sucesso ! Por favor Aguarde,\nLogo ele estará pronto! Volte Sempre!");
 
                 return true;
             }
@@ -104,7 +105,7 @@ public class Cliente extends Funcionario {
     /// MENU 2 ///
     public ArrayList<Pedido> escolherPedidos(Loja loja, ConjuntoDePedidos novo, ArrayList<Pedido> escolhidos) {
         System.out.println();
-        System.out.println("=> ESCOLHER OPÇÃO <=");
+        System.out.println("=> ESCOLHER PEDIDOS <=");
         System.out.println("1 - Adicionar Um Pedido");
         System.out.println("2 - Remover último Pedido");
         System.out.println("3 - Remover Todos Pedidos");
