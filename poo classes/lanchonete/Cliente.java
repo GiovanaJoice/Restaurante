@@ -64,7 +64,7 @@ public class Cliente extends Funcionario {
         //############## ERRO  ERRO   ERRO  ERRO ################################
         System.out.println(novo.impressao());
         System.out.println("\n\n>>>>> Total a pagar: R$ " + novo.getValorTotal() + " <<<<<\n");
-        System.out.println(">>>>> Deseja Confirmar a Compra (S/N)? <<<<<<");
+        System.out.println(">>>>> Deseja confirmar a compra (S/N)? <<<<<<");
         System.out.print("=> ");
         Scanner in = new Scanner(System.in);
         String resposta = "";
@@ -75,12 +75,12 @@ public class Cliente extends Funcionario {
         }
         switch (resposta.toUpperCase()) {
             case "S": {
-                MensagensPadrao.notice("Pedido feito com sucesso ! Por favor Aguarde,\nLogo ele estará pronto! Volte Sempre!");
+                MensagensPadrao.notice("Pedido feito com sucesso! Por favor aguarde,\nlogo ele estará pronto! Volte sempre!");
 
                 return true;
             }
             case "N": {
-                MensagensPadrao.notice("Conclusão de Pedido Cancelado !");
+                MensagensPadrao.notice("Conclusão de pedido cancelado!");
 
                 return false;
             }
@@ -106,11 +106,11 @@ public class Cliente extends Funcionario {
     public ArrayList<Pedido> escolherPedidos(Loja loja, ConjuntoDePedidos novo, ArrayList<Pedido> escolhidos) {
         System.out.println();
         System.out.println("=> ESCOLHER PEDIDOS <=");
-        System.out.println("1 - Adicionar Um Pedido");
-        System.out.println("2 - Remover último Pedido");
-        System.out.println("3 - Remover Todos Pedidos");
-        System.out.println("4 - Ver Pedidos");
-        System.out.println("5 - Concluir Pedido");
+        System.out.println("1 - Adicionar um pedido");
+        System.out.println("2 - Remover último pedido");
+        System.out.println("3 - Remover todos pedidos");
+        System.out.println("4 - Ver pedidos");
+        System.out.println("5 - Concluir pedido");
         System.out.println("6 - Voltar/Cancelar");
         System.out.print("=> ");
         Scanner in = new Scanner(System.in);
@@ -126,7 +126,7 @@ public class Cliente extends Funcionario {
                 Produto escolhido = escolherUmProduto(loja.getCardapio());
                 int quantidade = escolherQuantidade();
                 escolhidos.add(new Pedido(escolhido, quantidade));
-                MensagensPadrao.notice("Pedido Adicionado com Sucesso !");
+                MensagensPadrao.notice("Pedido adicionado com sucesso!");
                 escolherPedidos(loja, novo, escolhidos);
 
                 break;
@@ -138,7 +138,7 @@ public class Cliente extends Funcionario {
                 if (!escolhidos.isEmpty()) {
                     String excluido = escolhidos.get(escolhidos.size() - 1).toString();
                     escolhidos.remove(escolhidos.size() - 1);
-                    MensagensPadrao.notice("O Pedido: \n" + excluido + "\nFoi Excluido com Sucesso !");
+                    MensagensPadrao.notice("O pedido: \n" + excluido + "\nfoi excluído com sucesso!");
                 } else {
                     MensagensPadrao.erroLista();
                 }
@@ -153,7 +153,7 @@ public class Cliente extends Funcionario {
 
                 if (!escolhidos.isEmpty()) {
                     escolhidos.clear();
-                    MensagensPadrao.notice("Todos os Pedidos Foram Cancelados !");
+                    MensagensPadrao.notice("Todos os pedidos foram cancelados!");
                 } else {
                     MensagensPadrao.erroLista();
                 }

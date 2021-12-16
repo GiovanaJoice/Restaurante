@@ -39,7 +39,7 @@ public class ConjuntoDePedidos {
     public String impressao() {
         String resposta ="";
         for (Pedido pedido : pedidos) {
-            resposta += " produto: "+ pedido.getProduto().getDescricao() +" quantidade: " +pedido.getQuantidade() + "\n";
+            resposta += " Produto: "+pedido.getProduto() +" Quantidade: "+pedido.getQuantidade() + "\n";
         }
         
         return resposta;
